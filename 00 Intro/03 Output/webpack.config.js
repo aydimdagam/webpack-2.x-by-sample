@@ -1,12 +1,12 @@
-var path = require('path');
+var path = require('path'); // (de node) puedes acceder a los paths del directorio
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
-var basePath = __dirname;
+var basePath = __dirname; // (de node) directorio actual
 
 module.exports = {
   entry: ['./students.js'],
   output: {
-    path: path.join(basePath, 'dist'),
+    path: path.join(basePath, 'dist'),  //a partir del directorio actual mételo en /dist
     filename: 'bundle.js',
   },
   module: {

@@ -13,6 +13,7 @@ module.exports = {
     ],
     vendor: [
       'jquery',
+      //'bootstrap' // si quisiéramos usar el javascript de bootstrap (para que lo meta en el bundle)
     ],
     vendorStyles: [
       './node_modules/bootstrap/dist/css/bootstrap.css',

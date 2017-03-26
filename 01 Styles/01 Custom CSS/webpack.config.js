@@ -1,7 +1,7 @@
 var path = require('path');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var webpack = require('webpack');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var ExtractTextPlugin = require('extract-text-webpack-plugin'); // plugin para que los estilos tengan salida .css en vez de .js
 
 var basePath = __dirname;
 
@@ -58,9 +58,9 @@ module.exports = {
       names: ['vendor', 'manifest'],
     }),
     new ExtractTextPlugin({
-      filename: '[chunkhash].[name].css',
+      filename: '[chunkhash].[name].css', // la salida esta vez será un archivo css
       disable: false,
-      allChunks: true,
+      allChunks: true,  // para que incluya todos los css anidados (@import)
     }),
   ],
 };
