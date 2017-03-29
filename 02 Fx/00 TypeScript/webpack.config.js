@@ -8,7 +8,7 @@ var basePath = __dirname;
 module.exports = {
   context: path.join(basePath, 'src'),
   resolve: {
-    extensions: ['.js', '.ts']
+    extensions: ['.js', '.ts']  // para que No sea necesario poner la extensión .ts en los imports
   },
   entry: {
     app: './students.ts',

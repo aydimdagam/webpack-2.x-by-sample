@@ -10,7 +10,7 @@ export class AverageComponent extends React.Component {
       average: 0,
     };
   }
-
+  // este evento se lanza cuando el componente se ha montado
   componentDidMount() {
     this.setState({average: getAvg(this.state.scores)});
   }
