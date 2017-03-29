@@ -6,7 +6,7 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var basePath = __dirname;
 
 module.exports = {
-  context: path.join(basePath, 'src'),
+  context: path.join(basePath, 'src'),  // para meter archivos en src/ (refactorización)
   entry: {
     app: './students.js',
     appStyles: [
@@ -16,7 +16,7 @@ module.exports = {
       'jquery',
     ],
     vendorStyles: [
-      '../node_modules/bootstrap/dist/css/bootstrap.css',
+      '../node_modules/bootstrap/dist/css/bootstrap.css', // ../ por lo de "src/"
     ],
   },
   output: {
@@ -36,8 +36,8 @@ module.exports = {
         loader: ExtractTextPlugin.extract({
           fallback: 'style-loader',
           use: [
-            { loader: 'css-loader', },
-            { loader: 'sass-loader', },
+            { loader: 'css-loader', },  // …y sobre esa transformación haz la de css
+            { loader: 'sass-loader', }, // hazme la transformación de sass…
           ],
         }),
       },
@@ -71,8 +71,7 @@ module.exports = {
       },
     ],
   },
-  // For development https://webpack.js.org/configuration/devtool/#for-development
-  devtool: 'inline-source-map',
+  devtool: 'inline-source-map', // For development https://webpack.js.org/configuration/devtool/#for-development
   devServer: {
     port: 8080,
   },

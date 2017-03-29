@@ -70,9 +70,9 @@ module.exports = {
         loader: 'url-loader?limit=10000&mimetype=image/svg+xml'
       },
       {
-        test: /\.(png|jpg)$/,
+        test: /\.(png|jpg)$/, // para las imágenes cargadas desde JS
         exclude: /node_modules/,
-        loader: 'url-loader?limit=5000',
+        loader: 'url-loader?limit=5000',  // si pasa el límite lo incluye en el bundle (embeber) (se deben embeber las que pesan poco y se van a utilizar en muchos sitios)
       },
     ],
   },
